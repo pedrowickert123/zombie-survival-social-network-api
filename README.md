@@ -1,32 +1,3 @@
-# Adonis API application
-
-This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
-
-1. Bodyparser
-2. Authentication
-3. CORS
-4. Lucid ORM
-5. Migrations and seeds
-
-## Setup
-
-Use the adonis command to install the blueprint
-
-```bash
-adonis new yardstick --api-only
-```
-
-or manually clone the repo and then run `npm install`.
-
-
-### Migrations
-
-Run the following command to run startup migrations.
-
-```js
-adonis migration:run
-```
-
 # Zombie Survival Social Network Api
 
 ## Installation
@@ -48,8 +19,7 @@ to run initial database migration
 ```js
 adonis serve
 ``` 
-to run
-Or
+to run, or
 ```js
 adonis serve --dev
 ``` 
@@ -62,7 +32,7 @@ adonis test
 ``` 
 
 ## API Documentation
-### Authentication
+### Survivor
 ```js
 POST /survivor/store
 
@@ -85,4 +55,60 @@ POST /survivor/store
 		"quantity": 12
 	}]
 }
+```
+
+### Infected Notification
+```js
+POST /infected-notification/store
+
+* Example
+{
+	"from_survivor_id": 5,
+	"to_survivor_id": 8
+}
+```
+
+### Trade
+```js
+POST /trade/store
+
+* Example
+{
+	"from": {
+		"survivor_id": 1,
+		"items": [{
+			"item": "Water",
+			"quantity": 1
+		}, {
+			"item": "Medication",
+			"quantity": 1
+		}]
+	},
+	"to": {
+		"survivor_id": 2,
+		"items": [{
+			"item": "Ammunition",
+			"quantity": 6
+		}]
+	}
+}
+```
+
+### Reports
+
+#### Infected
+```js
+GET /report/infected
+```
+#### Non-Infected
+```js
+GET /report/infected
+```
+#### Average
+```js
+GET /report/average
+```
+#### Average
+```js
+GET /report/points-lost
 ```
