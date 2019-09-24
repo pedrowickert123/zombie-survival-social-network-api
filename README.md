@@ -9,7 +9,11 @@ npm i -g @adonisjs/cli
 to install Adonisjs
 * `npm install` 
 to install dependencies
-* Edit *./env.test* and *./env.example* with MySQL configurations
+* Edit *./env.test* and rename *./env.example* to *./env* with MySQL configurations
+```js
+adonis key:generate
+``` 
+to generate a key for the api
 ```js
 adonis migration:run
 ``` 
