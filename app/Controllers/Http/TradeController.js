@@ -8,42 +8,8 @@ const Survivor = use('App/Models/Survivor');
 const Trade = use('App/Models/Trade');
 const Inventory = use('App/Models/Inventory');
 
-/**
- * Resourceful controller for interacting with trades
- */
 class TradeController {
-  /**
-   * Show a list of all trades.
-   * GET trades
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async index({ request, response, view }) {
-  }
-
-  /**
-   * Render a form to be used for creating a new trade.
-   * GET trades/create
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async create({ request, response, view }) {
-  }
-
-  /**
-   * Create/save a new trade.
-   * POST trades
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   */
+  
   async store({ request, response }) {
     const { from, to } = request.only(['from', 'to']);
 
@@ -102,51 +68,6 @@ class TradeController {
     }
   }
 
-  /**
-   * Display a single trade.
-   * GET trades/:id
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async show({ params, request, response, view }) {
-  }
-
-  /**
-   * Render a form to update an existing trade.
-   * GET trades/:id/edit
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async edit({ params, request, response, view }) {
-  }
-
-  /**
-   * Update trade details.
-   * PUT or PATCH trades/:id
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   */
-  async update({ params, request, response }) {
-  }
-
-  /**
-   * Delete a trade with id.
-   * DELETE trades/:id
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   */
-  async destroy({ params, request, response }) {
-  }
 }
 
 module.exports = TradeController

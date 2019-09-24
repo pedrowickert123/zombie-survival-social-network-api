@@ -22,9 +22,10 @@ class ReportController {
   }
 
   async nonInfected ({ request, response, view }) {
+    const allSurvivors = await Survivor.getCount();
     const survivorsNonInfected = await Survivor.query().where('infected', 0).getCount();
     
-    return `There're ${survivorsNonInfected} survivors non-infected`;
+    return `There're ${(survivorsNonInfected * 100) / allSurvivors}% survivors non-infected`;
   }
 
   async average ({ request, response, view }) {
